@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Goa International Airport</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="test1.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+	.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#vidtop-content {
+	top: 0;
+	color: #fff;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
+
+.info p {
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+	color: white;
+    font-family: monospace;
+    text-align: center;
+}
+.info h3 {
+    margin-top: 80px;
+	text-align: center;
+    color: darkslategray;
+}
+#googleMap {
+      margin-top: 100px;
+      left: 50%
+      width: 50%;
+      height: 300px;
+}
+
+.table1 {
+background: rgba(255,255,255,0.5);
+}
+    
+    
+    
+element.style {
+    
+    position: static;
+    zoom: 1;
+    }
+#flights-info-box{
+    min-height: 80px;
+    float: left;
+    }
+    .info-box {
+         align-items: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        float: none;
+        
+        margin-left: 39%;
+        margin-right: auto;
+        
+        padding-bottom: 18px;
+        padding-right: 18px;
+        width: 23%;
+        
+        background-color: rgba(0, 0, 0, 0.4);
+        color: azure;
+        font-family: sans-serif;
+        
+        
+    }
+    
+    .info-box h4 {
+        padding-left: 30px;
+        font-family: monospace;
+       
+        
+    }
+    
+    
+    
+    
+input[type=text] {
+    
+    color: black;
+    width: 80px;
+    margin-left: 30%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 11px;
+    background-color: white;
+    background-image: url('search.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 12px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 98%;
+    margin-left: 3%;
+}
+    
+    
+footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }  
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+</style>
+    
+
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img style="max-width:100px; margin-top: 5px; width: 55px; height:55px ;"
+             src="https://img.clipartfest.com/f5572bd21753ce8e6c042d6ce10d2b62_plane-clip-art-vector-clip-airplane-clip-art-vector_2000-2000.svg">
+      <a class="navbar-brand" href="#myPage">SMARTPORT</a>
+     
+     
+     </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#myPage">HOME</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">FLIGHT STATUS
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Arrival</a></li>
+            <li><a href="#">Departure</a></li>
+          </ul>
+        </li>
+            <li>
+                <a href="#">HOW TO GET THERE?</a>
+            </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+<br>
+<div class="info">
+<h3> GOA INTERNATIONAL AIRPORT : DABOLIM AIRPORT </h3>
+<p>Goa International Airport (IATA: GOI, ICAO: VAGO), also known as the Dabolim airport, is the sole airport in the state of Goa, located in the city of Dabolim in Goa, India. It operates as a civil enclave in a military airbase named INS Hansa. It is 4 km from the nearest city Vasco da Gama, 23 km from Margao, and about 30 km from the state capital Panjim.
+
+The airport's integrated terminal was inaugurated in December 2013. And in the year 2016 the airport handled over 6.4 million passengers handling roughly 125 aircraft movements a day. Due to capacity constrains at the terminal and air traffic congestion due to strong military and naval presence, the second airport at Mopa was proposed and is already under early stage of construction with scheduled completion in 2020.</p>
+</div>
+
+
+<!--
+<div class="video-background">
+    <div class="video-foreground" id="theVideo">
+      <iframe src="https://www.youtube.com/embed/2iAD9yioGYo?controls=0&showinfo=0&loop=1&rel=0&autoplay=1" volume="0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+-->
+<div class="video-background">   
+<div class="video-foreground" id="theVideo">  
+<video width="100%" height="100%" autoplay loop="1">
+<source src="videoplayback.mp4" type="video/mp4">
+</video>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    function setOpacityDirectly (val) {
+        document.getElementsByTagName("video")[0.7].style.opacity = val;
+    }
+</script>
+<br>
+<br>
+    
+<div class="info-box" id="flights-info-box" style="position:static; zoom:1;">
+    <h4>CHECK  FLIGHT  STATUS</h4>
+    
+    <form>
+        <input type="text" name="search" placeholder="Flight no..">
+        
+        
+    </form>
+    
+</div>
+
+    
+
+
+<br>    
+<br>
+<br>
+<div id="googleMap"></div>
+<script>
+function myMap() {
+var myCenter = new google.maps.LatLng(15.3803, 73.835);
+var mapProp = {center:myCenter, zoom: 15, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAL9WK0Et6p8hz2NvSZ_Q7g7buYo1QiTLQ&callback=myMap"></script>
+    
+<br>
+<br>
+<br>
+
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+    <p>CONTACT <br>ADDRESS: Airport Rd, Dabolim, Goa 403801, India<br>PHONE:1234567891 <br>EMAIL: pratiknayak12@gmail.com 
+    </p>
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+</body>
+</html>
+
+
+    
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+

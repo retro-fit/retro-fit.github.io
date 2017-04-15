@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Goa International Airport</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="test1.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#vidtop-content {
+	top: 0;
+	color: #fff;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
+    
+    #flights-info-box{
+    min-height: 80px;
+    float: right;
+    }
+    
+    #bus {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        float: none;
+        
+        margin-left: 39%;
+        margin-right: auto;
+        
+        padding-bottom: 18px;
+        padding-right: 18px;
+        width:50%;
+        
+        background-color: rgba(0, 0, 0, 0.4);
+        color: azure;
+        font-family: sans-serif;
+        
+    }
+    
+</style>
+
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img style="max-width:100px; margin-top: 5px; width: 55px; height:55px ;"
+             src="https://img.clipartfest.com/f5572bd21753ce8e6c042d6ce10d2b62_plane-clip-art-vector-clip-airplane-clip-art-vector_2000-2000.svg">
+      <a class="navbar-brand" href="#myPage">SMARTPORT</a>
+     
+     
+     </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+ <li><a href="#myPage">HOME</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">FLIGHT STATUS
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Arrival</a></li>
+            <li><a href="#">Departure</a></li>
+          </ul>
+        </li>
+        
+        <li>  <a  href="#">HOW TO GET THERE?</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br><br><br>
+
+<div class="video-background">   
+<div class="video-foreground" id="theVideo">  
+<video width="100%" height="100%" autoplay loop="1">
+<source src="videoplayback.mp4" type="video/mp4">
+</video>
+    </div>
+</div>
+    
+    
+<div class="info-box" id="flights-info-box" style="position:static; zoom:1;">
+    <div id="bus">
+        <h1>BUS</h1><br>
+        <p>There are local buses in the airport that goes to Chicalim and Vasco-da-Gama, but they are not very regular and often crowded. Probably the best option is to take a taxi to nearby Vasco de Gama and then bus to Panaji. From Panaji there are regular bus services operating to most towns and cities in the neighbour states: Mumbai, Pune, Bangalore,.. These services are operated by Kadamba Transport Corporation (State Owned) and other transport corporations. Other facts on long trips:
+        - The buses stops for dinner and breakfast.
+        - Ticket may vary from RS 250 to 650.
+        - A journey to Mumbai can take up to 12-16 hours.
+        - Try to book your tickets well in advance
+        </p>
+    
+    </div>
+  
+    
+</div>
+
+</body>
+</html>
+
+
